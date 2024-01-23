@@ -22,6 +22,8 @@
   let string  ;
   //here you have to pass the value of the count to the funtion 
   $: {string = `Your squreCount value is ${squareCount(count)}`};
+  
+  let size = "large" ; 
 
 </script>
 
@@ -29,7 +31,15 @@
   <button on:click={increment} class='border border-green-200 p-[2rem] mx-3' >Click Me {count}</button>
   <p class = 'text-cyan-200 text-5xl'>{string ?? ''} <br><slot>fallback Nothing is provided.</slot><slot/></p>
 
+
+  
+  <!-- we can use the in different manner on conditionally classing done by ternary operator 
+      no in svelte provide us to use class:____={condition} -->
+  <p 
+    class:text-7xl={size=="large"}
+  >This have to largre</p>
   
 
 
 
+<!-- Slots slots props -->
