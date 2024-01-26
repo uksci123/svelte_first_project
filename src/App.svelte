@@ -57,7 +57,7 @@
 
   function handleRemoveTodo(event){
     todos = todos.filter((task)=>{
-      if(event.detail.id != task.id){
+      if(event.detail.id != task.id || !event.detail.taskStatus){
         return task;
       }
     })

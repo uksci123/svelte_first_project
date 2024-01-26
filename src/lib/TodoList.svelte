@@ -44,9 +44,10 @@
         })
     }
 
-    function handleRemoveTodo(id){
+    function handleRemoveTodo(id , taskStatus){
         dispatch('removeTodo',{
-            id
+            id,
+            taskStatus
         })
     }
 </script>
@@ -66,7 +67,7 @@
                 {todo.title}
                 <button 
                     class='border border-black rounded-lg p-1 active:translate-y-2'
-                    on:click={()=>handleRemoveTodo(todo.id)}
+                    on:click={()=>handleRemoveTodo(todo.id , todo.completed)}
                     >remove</button>
             </li>
         {/each} 
